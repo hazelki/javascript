@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hackbright Coffee Shop</title>
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link href="static/coffee.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container">
+    <div class="starter-template">
+        <h1>Coffee Shop</h1>
+        <br>
+
+        <img id="coffee-image" src="LOLWUT" height="300" width="200">
+
+        <h3 id="message">Click The Image To Order Coffee</h3>
+
+        <table class="table">
+            <tr>
+                <td class="col-md-2">
+                    <button class="btn btn-default" id="espresso">Espresso</button>
+                </td>
+                <td class="col-md-2">
+                    <button class="btn btn-default" id="latte">Latte</button>
+                </td>
+                <td class="col-md-2">
+                    <button class="btn btn-default" id="hot-chocolate">Hot Chocolate</button>
+                </td>
+            </tr>
+            <tr>
+                <td>$3.25</td>
+                <td>$4.15</td>
+                <td>$2.50</td>
+            </tr>
+        </table>
+
+        <h4>Total: <span id="revenue"><!-- Revenue Message will show up here --></span></h4>
+    </div>
+</div>
+
+<script>
+
+    // Step 1: Set these variables to their DOM elements
+
+    var myImage = document.getElementById("coffee-image");
+    var myRevenueMessage = document.getElementById("revenue");
+
+    // Step 1: Initialize the image to "coffee_beans.jpg"
+    myImage.setAttribute('src', "static/coffee_beans.jpg");
+
+    // Step 2: Add an event listener to the image that on a click will call make_coffee
+    myImage.addEventListener('click', function () {
+        return makeCoffee("brew");
+    });
+
+    // Step 2: Create a function called make_coffee that changes the image to coffee_mug.jpg
+    //
+    // function makeCoffee(){
+    //     myImage.setAttribute('src', "coffee_mug.jpg");
+    // }
+
+    // Step 3: Change the make_coffee function to first display coffee_machine.jpg for 500 ms,
+    // and to then display coffee_mug.jpg (this just involves adding 1 line to your code)
+    //
+    // function makeCoffee(){
+    //     myImage.setAttribute('src', "coffee_machine2.jpg");
+    //     setTimeout(function() { myImage.setAttribute('src', "coffee_mug.jpg"); }, 500);
+    // }
+
+    // Step 4: Change the makeCoffee function to first display coffee_machine.jpg for 1000 ms,
+    // to then display coffee_mug.jpg for 1500 ms, and then to display coffee_beans.jpg
+    // (this just involves adding 1 line to your code)
+    //
+    function makeCoffee() {
+         myImage.setAttribute('src', "static/coffee_machine.jpg");
+         setTimeout(function() { myImage.setAttribute('src', "static/coffee_mug.jpg"); }, 500);
+         setTimeout(function() { myImage.setAttribute('src', "static/coffee_beans.jpg"); }, 1500);
+    }
+
+</script>
+
+</body>
+</html>
